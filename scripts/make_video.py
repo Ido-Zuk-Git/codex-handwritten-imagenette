@@ -33,7 +33,7 @@ TITLE = "Run 2, session 1: hand-written Imagenette classifier (gpt-6.1-sol, 45 m
 X_MIN, X_MAX, Y_MIN, Y_MAX = 0.5, 13.5, 20.0, 45.0
 BELOW_IF_ABOVE = 42.0  # callout goes below the point when val > this
 
-INTRO_S, GROW_S, HOLD_S, FINAL_S = 1.0, 0.35, 1.0, 2.5
+INTRO_S, GROW_S, HOLD_S, FINAL_S = 1.0, 0.5, 1.8, 4.0
 
 
 def read_rows(path):
