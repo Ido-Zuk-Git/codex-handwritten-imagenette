@@ -1,0 +1,287 @@
+{
+  "timestamp": "2026-11-03T16:27:56",
+  "program": "/home/user/projects/weightspace-imagenette/workspace/classify.py",
+  "program_bytes": 22346,
+  "comment_report": {
+    "code_lines": 218,
+    "commented_lines": 113,
+    "numeric_lines_without_comment": 27,
+    "uncommented_numeric": [
+      {
+        "line": 44,
+        "src": "if area < h*w*0.003:"
+      },
+      {
+        "line": 50,
+        "src": "circularity = 4*math.pi*area / max(perimeter*perimeter, 1)"
+      },
+      {
+        "line": 110,
+        "src": "gy = cv2.Sobel(smooth, cv2.CV_32F, 0, 1, ksize=3)"
+      },
+      {
+        "line": 113,
+        "src": "strong = strength > 70"
+      },
+      {
+        "line": 124,
+        "src": "f['edge_bottom'] = fraction(strong[2*h//3:])"
+      },
+      {
+        "line": 129,
+        "src": "f['texture_center'] = fraction(residual[h//4:3*h//4, w//4:3*w//4] > 4)"
+      },
+      {
+        "line": 130,
+        "src": "f['smooth'] = fraction(strength < 20)"
+      },
+      {
+        "line": 131,
+        "src": "f['sky_smooth'] = fraction(masks['sky'] & (strength < 20))"
+      },
+      {
+        "line": 180,
+        "src": "if area < h*w*0.003 or area > h*w*0.65:"
+      },
+      {
+        "line": 187,
+        "src": "circularity = 4*math.pi*area/max(perimeter*perimeter, 1)"
+      },
+      {
+        "line": 188,
+        "src": "shape = ramp(fill, 0.60, 0.90)*ramp(circularity, 0.45, 0.80)"
+      },
+      {
+        "line": 200,
+        "src": "for cx, cy, radius in circles.reshape(-1, 3)[:40]:"
+      },
+      {
+        "line": 203,
+        "src": "for scale in (0.55, 0.85, 1.0, 1.15):"
+      },
+      {
+        "line": 210,
+        "src": "outer = float(np.mean(rings[3][0]))"
+      },
+      {
+        "line": 211,
+        "src": "neutral = float(np.mean(rings[0][3]))"
+      },
+      {
+        "line": 217,
+        "src": "dark_ring = max(float(np.mean(ring[2])) for ring in rings[:3])"
+      },
+      {
+        "line": 220,
+        "src": "coil *= ramp(radius/min(h, w), 0.04, 0.12)"
+      },
+      {
+        "line": 224,
+        "src": "tire *= ramp(outer-float(np.mean(rings[1][0])), 0.03, 0.22)"
+      },
+      {
+        "line": 225,
+        "src": "tire *= ramp(cy/h, 0.40, 0.65)*(1-ramp(radius/min(h, w), 0.20, 0.35))"
+      },
+      {
+        "line": 232,
+        "src": "pair *= ramp(abs(x-xx), 0.12, 0.35)*(1-ramp(abs(math.log(r/rr)), 0.35, 0.90))"
+      },
+      {
+        "line": 239,
+        "src": "muzzle = ((xx/0.38)**2+((yy-0.30)/0.28)**2 < 1)"
+      },
+      {
+        "line": 240,
+        "src": "ears = (((np.abs(xx)-0.62)/0.22)**2+((yy-0.05)/0.65)**2 < 1)"
+      },
+      {
+        "line": 246,
+        "src": "fish_ring = (((xx/0.98)**2+(yy/0.65)**2 < 1) & (np.abs(yy) > 0.32)).astype(np.float32)"
+      },
+      {
+        "line": 249,
+        "src": "for size in (28, 40, 56, 80, 112, 152):"
+      },
+      {
+        "line": 261,
+        "src": "f['dog_face'] = max(f['dog_face'], ramp(float(response.max()), 0.35, 0.80))"
+      },
+      {
+        "line": 271,
+        "src": "f['fish_body'] = max(f['fish_body'], ramp(float(response.max()), 0.15, 0.65))"
+      },
+      {
+        "line": 287,
+        "src": "bar = ramp(aspect, 3, 7)*ramp(fill, 0.40, 0.75)"
+      }
+    ]
+  },
+  "n_images": 500,
+  "n_scored": 500,
+  "excluded": 0,
+  "accuracy": 0.29,
+  "per_class_accuracy": {
+    "tench": 0.48,
+    "english_springer": 0.62,
+    "cassette_player": 0.18,
+    "chain_saw": 0.06,
+    "church": 0.02,
+    "french_horn": 0.38,
+    "garbage_truck": 0.06,
+    "gas_pump": 0.24,
+    "golf_ball": 0.24,
+    "parachute": 0.62
+  },
+  "classes": [
+    "tench",
+    "english_springer",
+    "cassette_player",
+    "chain_saw",
+    "church",
+    "french_horn",
+    "garbage_truck",
+    "gas_pump",
+    "golf_ball",
+    "parachute"
+  ],
+  "confusion": [
+    [
+      24,
+      9,
+      0,
+      0,
+      0,
+      15,
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      6,
+      31,
+      0,
+      0,
+      0,
+      9,
+      2,
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      20,
+      9,
+      3,
+      0,
+      9,
+      2,
+      1,
+      5,
+      1
+    ],
+    [
+      7,
+      23,
+      2,
+      3,
+      0,
+      12,
+      0,
+      0,
+      2,
+      1
+    ],
+    [
+      5,
+      10,
+      3,
+      2,
+      1,
+      20,
+      1,
+      1,
+      2,
+      5
+    ],
+    [
+      5,
+      19,
+      0,
+      3,
+      4,
+      19,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      24,
+      6,
+      1,
+      0,
+      7,
+      3,
+      0,
+      5,
+      0
+    ],
+    [
+      3,
+      14,
+      1,
+      0,
+      5,
+      9,
+      1,
+      12,
+      3,
+      2
+    ],
+    [
+      14,
+      13,
+      2,
+      1,
+      0,
+      5,
+      0,
+      0,
+      12,
+      3
+    ],
+    [
+      3,
+      10,
+      0,
+      0,
+      0,
+      6,
+      0,
+      0,
+      0,
+      31
+    ]
+  ],
+  "unscored_per_true_class": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "n_errors": 0,
+  "n_timeouts": 0,
+  "mean_ms": 230.90999721780827,
+  "timeout_s": 5.0,
+  "wall_s": 14.796674251556396
+}

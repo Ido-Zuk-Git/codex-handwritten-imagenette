@@ -1,0 +1,515 @@
+{
+  "timestamp": "2026-11-03T16:50:57",
+  "program": "/home/user/projects/weightspace-imagenette/workspace/classify.py",
+  "program_bytes": 59325,
+  "comment_report": {
+    "code_lines": 600,
+    "commented_lines": 279,
+    "numeric_lines_without_comment": 84,
+    "uncommented_numeric": [
+      {
+        "line": 44,
+        "src": "if area < h*w*0.003:"
+      },
+      {
+        "line": 50,
+        "src": "circularity = 4*math.pi*area / max(perimeter*perimeter, 1)"
+      },
+      {
+        "line": 113,
+        "src": "gray = np.clip((gray.astype(float)-low)*255/max(100, high-low), 0, 255).astype(np.uint8)"
+      },
+      {
+        "line": 118,
+        "src": "gy = cv2.Sobel(smooth, cv2.CV_32F, 0, 1, ksize=3)"
+      },
+      {
+        "line": 121,
+        "src": "strong = strength > 70"
+      },
+      {
+        "line": 132,
+        "src": "f['edge_bottom'] = fraction(strong[2*h//3:])"
+      },
+      {
+        "line": 137,
+        "src": "f['texture_center'] = fraction(residual[h//4:3*h//4, w//4:3*w//4] > 4)"
+      },
+      {
+        "line": 138,
+        "src": "f['smooth'] = fraction(strength < 20)"
+      },
+      {
+        "line": 139,
+        "src": "f['sky_smooth'] = fraction(masks['sky'] & (strength < 20))"
+      },
+      {
+        "line": 188,
+        "src": "if area < h*w*0.003 or area > h*w*0.65:"
+      },
+      {
+        "line": 199,
+        "src": "circularity = 4*math.pi*area/max(perimeter*perimeter, 1)"
+      },
+      {
+        "line": 200,
+        "src": "shape = ramp(fill, 0.60, 0.90)*ramp(circularity, 0.45, 0.80)"
+      },
+      {
+        "line": 212,
+        "src": "for cx, cy, radius in circles.reshape(-1, 3)[:40]:"
+      },
+      {
+        "line": 215,
+        "src": "for scale in (0.55, 0.85, 1.0, 1.15):"
+      },
+      {
+        "line": 222,
+        "src": "outer = float(np.mean(rings[3][0]))"
+      },
+      {
+        "line": 223,
+        "src": "neutral = float(np.mean(rings[0][3]))"
+      },
+      {
+        "line": 228,
+        "src": "ball *= ramp(radial, 0.50, 0.80)"
+      },
+      {
+        "line": 235,
+        "src": "dark_ring = max(float(np.mean(ring[2])) for ring in rings[:3])"
+      },
+      {
+        "line": 238,
+        "src": "coil *= ramp(radius/min(h, w), 0.04, 0.12)"
+      },
+      {
+        "line": 242,
+        "src": "tire *= ramp(outer-float(np.mean(rings[1][0])), 0.03, 0.22)"
+      },
+      {
+        "line": 243,
+        "src": "tire *= ramp(cy/h, 0.40, 0.65)*(1-ramp(radius/min(h, w), 0.20, 0.35))"
+      },
+      {
+        "line": 250,
+        "src": "pair *= ramp(abs(x-xx), 0.12, 0.35)*(1-ramp(abs(math.log(r/rr)), 0.35, 0.90))"
+      },
+      {
+        "line": 257,
+        "src": "muzzle = ((xx/0.38)**2+((yy-0.30)/0.28)**2 < 1)"
+      },
+      {
+        "line": 258,
+        "src": "ears = (((np.abs(xx)-0.62)/0.22)**2+((yy-0.05)/0.65)**2 < 1)"
+      },
+      {
+        "line": 267,
+        "src": "fish_ring = (((xx/0.98)**2+(yy/0.65)**2 < 1) & (np.abs(yy) > 0.32)).astype(np.float32)"
+      },
+      {
+        "line": 270,
+        "src": "for size in (28, 40, 56, 80, 112, 152):"
+      },
+      {
+        "line": 296,
+        "src": "f['fish_body'] = max(f['fish_body'], ramp(float(response.max()), 0.15, 0.65))"
+      },
+      {
+        "line": 312,
+        "src": "bar = ramp(aspect, 3, 7)*ramp(fill, 0.40, 0.75)"
+      },
+      {
+        "line": 330,
+        "src": "f[name+'_solid'] = fraction(eroded)/max(fraction(masks[name]), 0.001)"
+      },
+      {
+        "line": 340,
+        "src": "for threshold in (40, 65, 90):"
+      },
+      {
+        "line": 349,
+        "src": "if not 0.001 < a < 0.08:"
+      },
+      {
+        "line": 356,
+        "src": "strength = shape*fill*ramp((y+bh/2)/h, 0.45, 0.65)"
+      },
+      {
+        "line": 358,
+        "src": "f['tires'] = max((t[4] for t in tires), default=0.0)"
+      },
+      {
+        "line": 369,
+        "src": "lines = cv2.HoughLinesP(edges, 1, math.pi/180, threshold=22,"
+      },
+      {
+        "line": 370,
+        "src": "minLineLength=min(h, w)//5, maxLineGap=5)"
+      },
+      {
+        "line": 375,
+        "src": "for x1, y1, x2, y2 in lines.reshape(-1, 4):"
+      },
+      {
+        "line": 396,
+        "src": "upper = 1-ramp((a[3]+b[1])/2, 0.55, 0.80)"
+      },
+      {
+        "line": 408,
+        "src": "gx = cv2.Sobel(blur, cv2.CV_32F, 1, 0, ksize=3)"
+      },
+      {
+        "line": 409,
+        "src": "gy = cv2.Sobel(blur, cv2.CV_32F, 0, 1, ksize=3)"
+      },
+      {
+        "line": 452,
+        "src": "f['rect_tall'] = max(f['rect_tall'], evidence*ramp(bh/bw, 1.2, 2.5))"
+      },
+      {
+        "line": 459,
+        "src": "face *= 1-ramp(y, 0.35, 0.60)"
+      },
+      {
+        "line": 467,
+        "src": "count, labels, stats, centers = cv2.connectedComponentsWithStats(pits, 8)"
+      },
+      {
+        "line": 476,
+        "src": "for cy in (h/4, h/2, 3*h/4):"
+      },
+      {
+        "line": 486,
+        "src": "dxx = cv2.Sobel(smooth, cv2.CV_32F, 2, 0, ksize=3)*sigma*sigma"
+      },
+      {
+        "line": 487,
+        "src": "dyy = cv2.Sobel(smooth, cv2.CV_32F, 0, 2, ksize=3)*sigma*sigma"
+      },
+      {
+        "line": 488,
+        "src": "dxy = cv2.Sobel(smooth, cv2.CV_32F, 1, 1, ksize=3)*sigma*sigma"
+      },
+      {
+        "line": 507,
+        "src": "for level in (65, 115, 165):"
+      },
+      {
+        "line": 522,
+        "src": "corners = (fraction(crop[:bh//4, :bw//4])+fraction(crop[:bh//4, 3*bw//4:]))/2"
+      },
+      {
+        "line": 523,
+        "src": "middle = fraction(crop[bh//3:2*bh//3, bw//4:3*bw//4])"
+      },
+      {
+        "line": 534,
+        "src": "if not h*w*0.01 < area < h*w*0.70:"
+      },
+      {
+        "line": 543,
+        "src": "circularity = 4*math.pi*area/max(cv2.arcLength(c, True)**2, 1)"
+      },
+      {
+        "line": 544,
+        "src": "sphere = ramp(fill, 0.70, 0.93)*ramp(circularity, 0.60, 0.85)"
+      },
+      {
+        "line": 557,
+        "src": "bands = (((yy > 0.10) & (yy < 0.28)) | ((yy > 0.65) & (yy < 0.85))).astype(np.float32)"
+      },
+      {
+        "line": 560,
+        "src": "rig = ((np.abs(xx-0.5) < (0.45-0.45*yy)) & (yy > 0.45) & (yy < 0.90)).astype(np.float32)"
+      },
+      {
+        "line": 582,
+        "src": "f['pump_layout'] = max(f['pump_layout'], ramp(float(evidence.max()), 0.08, 0.30))"
+      },
+      {
+        "line": 583,
+        "src": "for width in (48, 72, 104, 144, 192):"
+      },
+      {
+        "line": 603,
+        "src": "lines = cv2.HoughLinesP(edges, 1, math.pi/180, threshold=20,"
+      },
+      {
+        "line": 604,
+        "src": "minLineLength=int(min(h, w)*0.18), maxLineGap=6)"
+      },
+      {
+        "line": 608,
+        "src": "lengths = np.hypot(segments[:, 2]-segments[:, 0], segments[:, 3]-segments[:, 1])"
+      },
+      {
+        "line": 609,
+        "src": "segments = segments[np.argsort(-lengths)[:45]]"
+      },
+      {
+        "line": 628,
+        "src": "if not 3 < separation < min(h, w)*0.12:"
+      },
+      {
+        "line": 641,
+        "src": "for offset in (-1.3, 0, 1.3):"
+      },
+      {
+        "line": 649,
+        "src": "contrast = ramp(min(left, right), 0.07, 0.25)"
+      },
+      {
+        "line": 652,
+        "src": "shape = ramp(overlap/separation, 4, 9)*contrast*metal"
+      },
+      {
+        "line": 657,
+        "src": "center = midpoint+sign*axis*overlap*0.60"
+      },
+      {
+        "line": 662,
+        "src": "engine = max(engine, ramp(orange, 0.02, 0.18))"
+      },
+      {
+        "line": 671,
+        "src": "gx = cv2.Sobel(blur, cv2.CV_32F, 1, 0, ksize=3)"
+      },
+      {
+        "line": 672,
+        "src": "gy = cv2.Sobel(blur, cv2.CV_32F, 0, 1, ksize=3)"
+      },
+      {
+        "line": 675,
+        "src": "fine = cv2.GaussianBlur(gray.astype(float), (0, 0), 0.7)"
+      },
+      {
+        "line": 676,
+        "src": "pits = (coarse-fine > 3) & (gray > 100) & (masks['white'] | masks['gray'])"
+      },
+      {
+        "line": 680,
+        "src": "for cx, cy, radius in circles.reshape(-1, 3)[:30]:"
+      },
+      {
+        "line": 693,
+        "src": "for scale in (0.40, 0.65, 0.80, 1.15):"
+      },
+      {
+        "line": 703,
+        "src": "texture *= ramp(float(np.mean(pale)), 0.60, 0.90)"
+      },
+      {
+        "line": 704,
+        "src": "f['dimple_circle'] = max(f['dimple_circle'], texture*ramp(support, 0.25, 0.55))"
+      },
+      {
+        "line": 721,
+        "src": "outside = ((yy > -0.75) & (yy < 0.65) & (np.abs(xx) > (yy+1)*0.35)).astype(np.float32)"
+      },
+      {
+        "line": 730,
+        "src": "for height in (24, 40, 64, 96, 144):"
+      },
+      {
+        "line": 744,
+        "src": "f['spire'] = max(f['spire'], ramp(float(response[:limit].max()), 0.15, 0.45))"
+      },
+      {
+        "line": 745,
+        "src": "for size in (9, 13, 19, 27):"
+      },
+      {
+        "line": 756,
+        "src": "f['cross'] = max(f['cross'], ramp(float(response[:max(1, h//2)].max()), 0.15, 0.40))"
+      },
+      {
+        "line": 759,
+        "src": "lines = cv2.HoughLinesP(edges, 1, math.pi/180, threshold=22,"
+      },
+      {
+        "line": 760,
+        "src": "minLineLength=min(h, w)//5, maxLineGap=5)"
+      },
+      {
+        "line": 762,
+        "src": "lines = lines.reshape(-1, 4).astype(float)"
+      },
+      {
+        "line": 765,
+        "src": "for fy in (0.35, 0.50, 0.65):"
+      },
+      {
+        "line": 777,
+        "src": "value = ramp(alignment, 0.94, 0.99)*length/math.hypot(h, w)"
+      }
+    ]
+  },
+  "n_images": 500,
+  "n_scored": 500,
+  "excluded": 0,
+  "accuracy": 0.354,
+  "per_class_accuracy": {
+    "tench": 0.2,
+    "english_springer": 0.5,
+    "cassette_player": 0.36,
+    "chain_saw": 0.3,
+    "church": 0.44,
+    "french_horn": 0.34,
+    "garbage_truck": 0.36,
+    "gas_pump": 0.3,
+    "golf_ball": 0.28,
+    "parachute": 0.46
+  },
+  "classes": [
+    "tench",
+    "english_springer",
+    "cassette_player",
+    "chain_saw",
+    "church",
+    "french_horn",
+    "garbage_truck",
+    "gas_pump",
+    "golf_ball",
+    "parachute"
+  ],
+  "confusion": [
+    [
+      10,
+      20,
+      0,
+      0,
+      15,
+      5,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      25,
+      2,
+      2,
+      7,
+      7,
+      1,
+      0,
+      3,
+      1
+    ],
+    [
+      0,
+      9,
+      18,
+      7,
+      1,
+      3,
+      5,
+      3,
+      3,
+      1
+    ],
+    [
+      2,
+      10,
+      2,
+      15,
+      11,
+      6,
+      3,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      8,
+      1,
+      4,
+      22,
+      6,
+      2,
+      0,
+      1,
+      5
+    ],
+    [
+      1,
+      12,
+      4,
+      8,
+      7,
+      17,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      14,
+      6,
+      6,
+      4,
+      0,
+      18,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      3,
+      5,
+      3,
+      14,
+      2,
+      4,
+      15,
+      2,
+      1
+    ],
+    [
+      4,
+      11,
+      2,
+      0,
+      9,
+      6,
+      4,
+      0,
+      14,
+      0
+    ],
+    [
+      1,
+      10,
+      0,
+      4,
+      4,
+      5,
+      1,
+      0,
+      2,
+      23
+    ]
+  ],
+  "unscored_per_true_class": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "n_errors": 0,
+  "n_timeouts": 0,
+  "mean_ms": 444.8919487398816,
+  "timeout_s": 5.0,
+  "wall_s": 28.20295763015747
+}

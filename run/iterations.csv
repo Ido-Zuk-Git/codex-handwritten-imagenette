@@ -1,0 +1,14 @@
+iteration,train_acc,val_acc,minutes,primitive,note
+1,22.2,24.8,3.5,"colour masks, texture, silhouettes, straight lines","color, texture, silhouette, and line evidence"
+2,26.0,29.0,7.2,"circle/ring tests, tyre pairs, shape sketches",circle and geometric region sketches
+3,36.6,36.0,11.5,"surface context, road, roof lines",surface context and vehicle/building geometry
+4,36.2,37.0,14.3,"orientation, polygon panels, ridges","orientation, polygon panels, pits, and reflective ridges"
+5,38.4,39.8,16.2,stricter object support,stricter object support
+6,39.2,41.6,19.6,"arched windows, spheres, pump/cassette layouts",part layouts and colored balls
+7,39.6,39.0,25.3,"blade edges, circular texture",paired blade edges and circular texture
+8,38.4,38.4,27.4,"steeples, crosses, perspective","steeples, crosses, and perspective"
+9,35.4,35.0,32.5,exposure/contrast normalisation (reverted),exposure and contrast normalization
+10,37.0,38.4,37.0,"brass holes, speaker pair, saw silhouette",topological parts and contextual conjunctions
+11,42.6,40.4,38.5,rewrite into one coherent rule set,coherent scene/part evidence
+12,41.8,41.0,41.8,shadow-tolerant tyre arcs,shadow-tolerant tire arcs
+13,42.6,40.8,44.0,"canopy sketch, lighter tyre weight",

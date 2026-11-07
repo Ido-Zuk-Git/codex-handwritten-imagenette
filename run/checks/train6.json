@@ -1,0 +1,399 @@
+{
+  "timestamp": "2026-11-03T16:39:34",
+  "program": "/home/user/projects/weightspace-imagenette/workspace/classify.py",
+  "program_bytes": 45181,
+  "comment_report": {
+    "code_lines": 444,
+    "commented_lines": 224,
+    "numeric_lines_without_comment": 55,
+    "uncommented_numeric": [
+      {
+        "line": 44,
+        "src": "if area < h*w*0.003:"
+      },
+      {
+        "line": 50,
+        "src": "circularity = 4*math.pi*area / max(perimeter*perimeter, 1)"
+      },
+      {
+        "line": 110,
+        "src": "gy = cv2.Sobel(smooth, cv2.CV_32F, 0, 1, ksize=3)"
+      },
+      {
+        "line": 113,
+        "src": "strong = strength > 70"
+      },
+      {
+        "line": 124,
+        "src": "f['edge_bottom'] = fraction(strong[2*h//3:])"
+      },
+      {
+        "line": 129,
+        "src": "f['texture_center'] = fraction(residual[h//4:3*h//4, w//4:3*w//4] > 4)"
+      },
+      {
+        "line": 130,
+        "src": "f['smooth'] = fraction(strength < 20)"
+      },
+      {
+        "line": 131,
+        "src": "f['sky_smooth'] = fraction(masks['sky'] & (strength < 20))"
+      },
+      {
+        "line": 180,
+        "src": "if area < h*w*0.003 or area > h*w*0.65:"
+      },
+      {
+        "line": 191,
+        "src": "circularity = 4*math.pi*area/max(perimeter*perimeter, 1)"
+      },
+      {
+        "line": 192,
+        "src": "shape = ramp(fill, 0.60, 0.90)*ramp(circularity, 0.45, 0.80)"
+      },
+      {
+        "line": 204,
+        "src": "for cx, cy, radius in circles.reshape(-1, 3)[:40]:"
+      },
+      {
+        "line": 207,
+        "src": "for scale in (0.55, 0.85, 1.0, 1.15):"
+      },
+      {
+        "line": 214,
+        "src": "outer = float(np.mean(rings[3][0]))"
+      },
+      {
+        "line": 215,
+        "src": "neutral = float(np.mean(rings[0][3]))"
+      },
+      {
+        "line": 220,
+        "src": "ball *= ramp(radial, 0.50, 0.80)"
+      },
+      {
+        "line": 227,
+        "src": "dark_ring = max(float(np.mean(ring[2])) for ring in rings[:3])"
+      },
+      {
+        "line": 230,
+        "src": "coil *= ramp(radius/min(h, w), 0.04, 0.12)"
+      },
+      {
+        "line": 234,
+        "src": "tire *= ramp(outer-float(np.mean(rings[1][0])), 0.03, 0.22)"
+      },
+      {
+        "line": 235,
+        "src": "tire *= ramp(cy/h, 0.40, 0.65)*(1-ramp(radius/min(h, w), 0.20, 0.35))"
+      },
+      {
+        "line": 242,
+        "src": "pair *= ramp(abs(x-xx), 0.12, 0.35)*(1-ramp(abs(math.log(r/rr)), 0.35, 0.90))"
+      },
+      {
+        "line": 249,
+        "src": "muzzle = ((xx/0.38)**2+((yy-0.30)/0.28)**2 < 1)"
+      },
+      {
+        "line": 250,
+        "src": "ears = (((np.abs(xx)-0.62)/0.22)**2+((yy-0.05)/0.65)**2 < 1)"
+      },
+      {
+        "line": 259,
+        "src": "fish_ring = (((xx/0.98)**2+(yy/0.65)**2 < 1) & (np.abs(yy) > 0.32)).astype(np.float32)"
+      },
+      {
+        "line": 262,
+        "src": "for size in (28, 40, 56, 80, 112, 152):"
+      },
+      {
+        "line": 288,
+        "src": "f['fish_body'] = max(f['fish_body'], ramp(float(response.max()), 0.15, 0.65))"
+      },
+      {
+        "line": 304,
+        "src": "bar = ramp(aspect, 3, 7)*ramp(fill, 0.40, 0.75)"
+      },
+      {
+        "line": 322,
+        "src": "f[name+'_solid'] = fraction(eroded)/max(fraction(masks[name]), 0.001)"
+      },
+      {
+        "line": 332,
+        "src": "for threshold in (40, 65, 90):"
+      },
+      {
+        "line": 341,
+        "src": "if not 0.001 < a < 0.08:"
+      },
+      {
+        "line": 348,
+        "src": "strength = shape*fill*ramp((y+bh/2)/h, 0.45, 0.65)"
+      },
+      {
+        "line": 350,
+        "src": "f['tires'] = max((t[4] for t in tires), default=0.0)"
+      },
+      {
+        "line": 361,
+        "src": "lines = cv2.HoughLinesP(edges, 1, math.pi/180, threshold=22,"
+      },
+      {
+        "line": 362,
+        "src": "minLineLength=min(h, w)//5, maxLineGap=5)"
+      },
+      {
+        "line": 367,
+        "src": "for x1, y1, x2, y2 in lines.reshape(-1, 4):"
+      },
+      {
+        "line": 388,
+        "src": "upper = 1-ramp((a[3]+b[1])/2, 0.55, 0.80)"
+      },
+      {
+        "line": 400,
+        "src": "gx = cv2.Sobel(blur, cv2.CV_32F, 1, 0, ksize=3)"
+      },
+      {
+        "line": 401,
+        "src": "gy = cv2.Sobel(blur, cv2.CV_32F, 0, 1, ksize=3)"
+      },
+      {
+        "line": 444,
+        "src": "f['rect_tall'] = max(f['rect_tall'], evidence*ramp(bh/bw, 1.2, 2.5))"
+      },
+      {
+        "line": 451,
+        "src": "face *= 1-ramp(y, 0.35, 0.60)"
+      },
+      {
+        "line": 459,
+        "src": "count, labels, stats, centers = cv2.connectedComponentsWithStats(pits, 8)"
+      },
+      {
+        "line": 468,
+        "src": "for cy in (h/4, h/2, 3*h/4):"
+      },
+      {
+        "line": 478,
+        "src": "dxx = cv2.Sobel(smooth, cv2.CV_32F, 2, 0, ksize=3)*sigma*sigma"
+      },
+      {
+        "line": 479,
+        "src": "dyy = cv2.Sobel(smooth, cv2.CV_32F, 0, 2, ksize=3)*sigma*sigma"
+      },
+      {
+        "line": 480,
+        "src": "dxy = cv2.Sobel(smooth, cv2.CV_32F, 1, 1, ksize=3)*sigma*sigma"
+      },
+      {
+        "line": 499,
+        "src": "for level in (65, 115, 165):"
+      },
+      {
+        "line": 514,
+        "src": "corners = (fraction(crop[:bh//4, :bw//4])+fraction(crop[:bh//4, 3*bw//4:]))/2"
+      },
+      {
+        "line": 515,
+        "src": "middle = fraction(crop[bh//3:2*bh//3, bw//4:3*bw//4])"
+      },
+      {
+        "line": 526,
+        "src": "if not h*w*0.01 < area < h*w*0.70:"
+      },
+      {
+        "line": 535,
+        "src": "circularity = 4*math.pi*area/max(cv2.arcLength(c, True)**2, 1)"
+      },
+      {
+        "line": 536,
+        "src": "sphere = ramp(fill, 0.70, 0.93)*ramp(circularity, 0.60, 0.85)"
+      },
+      {
+        "line": 549,
+        "src": "bands = (((yy > 0.10) & (yy < 0.28)) | ((yy > 0.65) & (yy < 0.85))).astype(np.float32)"
+      },
+      {
+        "line": 552,
+        "src": "rig = ((np.abs(xx-0.5) < (0.45-0.45*yy)) & (yy > 0.45) & (yy < 0.90)).astype(np.float32)"
+      },
+      {
+        "line": 574,
+        "src": "f['pump_layout'] = max(f['pump_layout'], ramp(float(evidence.max()), 0.08, 0.30))"
+      },
+      {
+        "line": 575,
+        "src": "for width in (48, 72, 104, 144, 192):"
+      }
+    ]
+  },
+  "n_images": 500,
+  "n_scored": 500,
+  "excluded": 0,
+  "accuracy": 0.392,
+  "per_class_accuracy": {
+    "tench": 0.58,
+    "english_springer": 0.14,
+    "cassette_player": 0.38,
+    "chain_saw": 0.24,
+    "church": 0.34,
+    "french_horn": 0.48,
+    "garbage_truck": 0.46,
+    "gas_pump": 0.44,
+    "golf_ball": 0.34,
+    "parachute": 0.52
+  },
+  "classes": [
+    "tench",
+    "english_springer",
+    "cassette_player",
+    "chain_saw",
+    "church",
+    "french_horn",
+    "garbage_truck",
+    "gas_pump",
+    "golf_ball",
+    "parachute"
+  ],
+  "confusion": [
+    [
+      29,
+      3,
+      0,
+      0,
+      7,
+      6,
+      3,
+      0,
+      1,
+      1
+    ],
+    [
+      10,
+      7,
+      4,
+      3,
+      10,
+      8,
+      3,
+      0,
+      4,
+      1
+    ],
+    [
+      0,
+      5,
+      19,
+      3,
+      2,
+      5,
+      9,
+      5,
+      1,
+      1
+    ],
+    [
+      5,
+      4,
+      4,
+      12,
+      8,
+      9,
+      5,
+      0,
+      2,
+      1
+    ],
+    [
+      2,
+      2,
+      1,
+      5,
+      17,
+      7,
+      9,
+      0,
+      2,
+      5
+    ],
+    [
+      3,
+      5,
+      6,
+      4,
+      7,
+      24,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      6,
+      2,
+      7,
+      3,
+      4,
+      1,
+      23,
+      2,
+      0,
+      2
+    ],
+    [
+      1,
+      0,
+      4,
+      3,
+      7,
+      4,
+      7,
+      22,
+      1,
+      1
+    ],
+    [
+      14,
+      2,
+      3,
+      2,
+      3,
+      5,
+      3,
+      0,
+      17,
+      1
+    ],
+    [
+      3,
+      5,
+      1,
+      3,
+      1,
+      4,
+      5,
+      0,
+      2,
+      26
+    ]
+  ],
+  "unscored_per_true_class": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "n_errors": 0,
+  "n_timeouts": 0,
+  "mean_ms": 172.07221593007853,
+  "timeout_s": 5.0,
+  "wall_s": 11.062569618225098
+}

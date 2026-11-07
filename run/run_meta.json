@@ -1,0 +1,16 @@
+{
+  "mode": "full",
+  "model": "gpt-6.1-sol",
+  "effort": "high",
+  "wall_limit": "45m",
+  "views": "unlimited (val images viewed are moved to data/train)",
+  "n_train": 500,
+  "n_val": 500,
+  "start": "2026-11-03T14:20:45Z",
+  "end": "2026-11-03T15:05:45Z",
+  "elapsed_seconds": 2700,
+  "exit_code": 124,
+  "session_id": "01a1a1c8-ac85-7592-8c8a-3efc3ff9dbdc",
+  "budget_before": "[budget] 16:20:45 5h: 20% used (resets in 240m) | weekly: 20% (resets in 1d 16h) | file: rollout-2026-11-03T16-01-00-01a1a1b6-98ab-7c53-bcba-9fa03fe265a8.jsonl",
+  "budget_after": "[budget] 17:05:45 5h: 42% used (resets in 195m) | weekly: 24% (resets in 1d 15h) | file: rollout-2026-11-03T16-20-45-01a1a1c8-ac85-7592-8c8a-3efc3ff9dbdc.jsonl"
+}

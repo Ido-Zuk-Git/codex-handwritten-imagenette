@@ -1,0 +1,13 @@
+workspace/.looker/
+__pycache__/
+judge/.venv/
+*.pyc
+.DS_Store
+baseline/.venv/
+.pilot_stash/
+# built locally by scripts/build_data.py (images are not shipped)
+workspace/data/
+test/
+# run outputs and generated media
+out/
+media/frames/
